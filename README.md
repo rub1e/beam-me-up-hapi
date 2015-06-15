@@ -14,4 +14,8 @@ At the insistence of @rjmk, we have avoided using the popular node module [multi
 
 * We assume you have node installed already
 * Clone this repository
-* Run ```npm install``` to install the dependencies
+* Run `npm install` to install the dependencies
+
+## Notes
+
+Buffer is an object in node -- beware lack of deep equal!

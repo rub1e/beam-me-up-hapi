@@ -26,6 +26,22 @@ So, according to the form, we should be expecting a POST request at `/upload`. T
 
 See if you can add an endpoint that logs in your terminal the request object for an attempted upload, then check out **branch 1** to see how we did it.
 
+### Step 1
+
+**Liftoff! Now we can see things are wired up right. Next challenge, finding out where the file is in the request object and working out how to deal with it.**
+
+After you've tried uploading a picture, you should see in your terminal a rather large request object. Scrolling through it you might spot some likely looking properties. These properties actually come from Hapi's automatic parsing of the form submission. Thanks, Hapi! :)
+
+Now would be a good time to look at the [`fs` core module docs](https://nodejs.org/api/fs.html) and start thinking about how to write the information we get to a file (in a currently non-existent `pix` directory!). Once you've had a think, skip over to **branch 2**.
+
+### Step 2
+
+Browsers sometimes split the data they receive into chunks and deliver them piecemeal to the server. A lovely abstraction for sources of data that may or may not be coming along all at once is *streams*. For this reason, we create a new write stream pointing at the file we want and then we push the data we receive down it.
+
+Test number one passes! We now want to set up an endpoint for serving the picture. We're going to be lazy here, and just check that the file name of the file that's being sent is correct. This is definitely a place we might strengthen our tests in the future.
+
+Let's have an endpoint exposed at `/pic/{picname}` that will return the file in `/pix/` that is called whatever `{picname}` equals. Have a look in **branch 3** to see how we've done it.
+
 ## Notes
 
 Buffer is an object in node -- beware lack of deep equal!

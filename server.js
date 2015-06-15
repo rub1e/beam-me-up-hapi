@@ -1,7 +1,7 @@
 var Hapi = require('hapi');
 var fs = require('fs');
 var server = new Hapi.Server();
-    
+
 server.connection({
   port: 8000,
   host: 'localhost',
@@ -19,23 +19,22 @@ server.route([
     path: '/upload',
     method: 'POST',
     handler: function (request, reply){
-      var piccy = fs.createWriteStream('pic.jpg');
+      var piccy = fs.createWriteStream('pix/'+request.payload.title);
       piccy.write(request.payload.upload);
-      var picReply = fs.createReadStream('pic.jpg');
     }
   },
   {
-    path: '/pic.jpg',
+    path: '/pics/{picname}',
     method: 'GET',
     handler: function(request, reply){
-      reply.file('pic.jpg');
+      reply.file('pix/'+request.params.picname);
     }
   },
   {
     path: '/default',
     method: 'GET',
     handler: function(request, reply){
-      reply('<img src = "pic.jpg">');
+      reply('<img src = "pics/pic">');
     }
   }
 ]);

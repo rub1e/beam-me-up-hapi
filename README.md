@@ -12,4 +12,6 @@ At the insistence of @rjmk, we have avoided using the popular node module [multi
 
 ## How?  
 
-* 
+* We assume you have node installed already
+* Clone this repository
+* Run ```npm install``` to install the dependencies

@@ -1,7 +1,7 @@
 var Hapi = require('hapi');
 var fs = require('fs');
 var server = new Hapi.Server();
-    
+
 server.connection({
   port: 8000,
   host: 'localhost',
@@ -12,6 +12,7 @@ server.route([
     path: '/',
     method: 'GET',
     handler: function(request, reply){
+      console.log("username", process.env.S3_KEY);
       reply.file('index.html');
     }
   },

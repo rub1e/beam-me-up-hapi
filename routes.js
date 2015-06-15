@@ -26,11 +26,4 @@ module.exports = [
       reply.file('pix/'+request.params.picname);
     }
   },
-  {
-    path: '/view/{picname}',
-    method: 'GET',
-    handler: function(request, reply){
-      reply('<img src = "/pics/' + request.params.picname + '">');
-    }
-  }
 ];

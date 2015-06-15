@@ -3,9 +3,9 @@ var stream = require('stream');
 var fs = require('fs');
 var Routes = require('./routes');
 
-function replyMaker(string,file){
+function replyMaker(string,fileName){
   var reply = function(string2){assert.equal(string, string2);};
-  reply.file = function(file2){assert.equal(file.toString(), file2);};
+  reply.file = function(fileName2){assert.equal(fileName, fileName2);};
   return reply;
 }
 

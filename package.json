@@ -1,0 +1,27 @@
+{
+  "name": "beam-me-up-hapi",
+  "version": "1.0.0",
+  "description": "Simple upload/download with hapi server",
+  "main": "server.js",
+  "scripts": {
+    "test": "tests",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rub1e/beam-me-up-hapi.git"
+  },
+  "keywords": [
+    "hapi",
+    "multipart"
+  ],
+  "author": "rub1e",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rub1e/beam-me-up-hapi/issues"
+  },
+  "homepage": "https://github.com/rub1e/beam-me-up-hapi#readme",
+  "dependencies": {
+    "hapi": "^8.6.1"
+  }
+}

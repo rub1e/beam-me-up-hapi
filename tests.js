@@ -3,15 +3,8 @@ var stream = require('stream');
 var fs = require('fs');
 var Routes = require('./routes');
 
-function replyMaker(string,file){
-  var reply = function(string2){assert.equal(string, string2);};
-  reply.file = function(file2){assert.equal(file.toString(), file2);};
-  return reply;
-}
-
 var pic = fs.readFileSync('test.jpg');
 var request = new stream.Readable();
-var reply = replyMaker('<img src = "/pics/sup">', 'pix/sup');
 
 request.payload = {};
 request.payload.title = 'sup';
@@ -22,10 +15,3 @@ Routes[1].handler(request);
 fs.readFile('pix/sup', function(err,data){
   assert.equal(data.toString(), pic.toString());
 });
-
-request.params = {};
-request.params.picname = 'sup';
-
-Routes[2].handler(request,reply);
-
-Routes[3].handler(request,reply);

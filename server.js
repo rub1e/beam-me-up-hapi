@@ -9,6 +9,4 @@ server.connection({
 
 server.route(require('./routes'));
 
-module.exports = server;
-
 server.start();

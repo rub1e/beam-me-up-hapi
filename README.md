@@ -26,6 +26,14 @@ So, according to the form, we should be expecting a POST request at `/upload`. T
 
 See if you can add an endpoint that logs in your terminal the request object for an attempted upload, then check out **branch 1** to see how we did it.
 
+### Step 1
+
+**Liftoff! Now we can see things are wired up right. Next challenge, finding out where the file is in the request object and working out how to deal with it.**
+
+After you've tried uploading a picture, you should see in your terminal a rather large request object. Scrolling through it you might spot some likely looking properties. These properties actually come from Hapi's automatic parsing of the form submission. Thanks, Hapi! :)
+
+Now would be a good time to look at the [`fs` core module docs](https://nodejs.org/api/fs.html) and start thinking about how to write the information we get to a file (in a currently non-existent `pix` directory!).
+
 ## Notes
 
 Buffer is an object in node -- beware lack of deep equal!

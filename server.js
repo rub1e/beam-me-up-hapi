@@ -31,10 +31,10 @@ server.route([
     }
   },
   {
-    path: '/default',
+    path: '/view/{picname}',
     method: 'GET',
     handler: function(request, reply){
-      reply('<img src = "pics/pic">');
+      reply('<img src = "/pics/' + request.params.picname + '">');
     }
   }
 ]);

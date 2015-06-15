@@ -46,6 +46,6 @@ Let's have an endpoint exposed at `/pic/{picname}` that will return the file in 
 
 Yep, Hapi makes it pretty easy! Just pass the file *path* to the reply's file *method*! **Have you tried uploading a file with a name that doesn't have an extension? Have you then tried getting that file?** You may well have had a download initiated rather than seeing a picture show up. **Let's add in a `view` endpoint so that we can see the image. (HINT: think DOMstring (i.e. HTML as a string)).** Have a look at [the documentation for Hapi's `reply` interface](http://hapijs.com/api#reply-interface). You can then head back to **master** to see how we managed everything!
 
-## Notes
+## Misc
 
 Buffer is an object in node -- beware lack of deep equal!

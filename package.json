@@ -4,7 +4,7 @@
   "description": "Simple upload/download with hapi server",
   "main": "server.js",
   "scripts": {
-    "test": "tests",
+    "test": "node tests.js",
     "start": "node server.js"
   },
   "repository": {
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/rub1e/beam-me-up-hapi#readme",
   "dependencies": {
     "hapi": "^8.6.1"
+  },
+  "devDependencies": {
+    "shot": "^1.5.3"
   }
 }

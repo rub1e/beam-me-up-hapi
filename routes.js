@@ -13,9 +13,7 @@ module.exports = [
     method: 'POST',
     handler: function (request, reply){
       fs.stat('pix',function(err,stats){
-        if (err) {
-          fs.mkdirSync('pix'
-        )};
+        if (err) fs.mkdirSync('pix');
         var piccy = fs.createWriteStream('pix/'+request.payload.title);
         piccy.write(request.payload.upload);
       });

@@ -4,6 +4,7 @@ var fs = require('fs');
 var Routes = require('./routes');
 
 function replyMaker(fileName){
+  var reply = {};
   reply.file = function(fileName2){assert.equal(fileName, fileName2);};
   return reply;
 }
